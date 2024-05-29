@@ -15,8 +15,10 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ThreadUtils
+import com.blankj.utilcode.util.UiMessageUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.luck.picture.lib.basic.PictureSelector
@@ -90,6 +92,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         textView6 = findViewById(R.id.textView6)
         textView7 = findViewById(R.id.textView7)
 
+        findViewById<TextView>(R.id.textView).setOnClickListener {
+            var msg="更改以下值，可能需要点颜色知识。或者一个个调感觉，就可以去掉可能人物画像被误转化成指定颜色的污染点。想搞成默认值，就后台杀死app重新打开就是默认值,默认值其实也是我瞎调出来的，能用就用，不能用自己调。"
+            showAlertDialog(this,"提示",msg)
+        }
 
         findViewById<Button>(R.id.btn_select).setOnClickListener {
             PictureSelector.create(this)
@@ -133,6 +139,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
+
+    fun showAlertDialog(context: Context, title: String, message: String) {
+        AlertDialog.Builder(context)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                // 点击"确定"按钮的操作，这里可以留空或者添加相应逻辑
+                dialog.dismiss()
+            }
+            .setNegativeButton(android.R.string.cancel) { dialog, _ ->
+                // 点击"取消"按钮的操作，这里可以留空或者添加相应逻辑
+                dialog.dismiss()
+            }
+            .show()
+    }
+
 
     fun saveImageToGallery(imagePath: String, title: String, description: String) {
         val contentValues = ContentValues().apply {
