@@ -6,13 +6,107 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btn_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="24dp"
+        android:text="选择图片"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_w_r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="白转红"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btn_w_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="白转蓝"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_w_r"
+        app:layout_constraintStart_toEndOf="@+id/btn_w_r"
+        app:layout_constraintTop_toTopOf="@+id/btn_w_r" />
+
+    <Button
+        android:id="@+id/btn_b_r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝转红"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_w_b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_w_b"
+        app:layout_constraintTop_toTopOf="@+id/btn_w_b" />
+
+    <Button
+        android:id="@+id/btn_b_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="蓝转白"
+        app:layout_constraintStart_toStartOf="@+id/btn_w_r"
+        app:layout_constraintTop_toBottomOf="@+id/btn_w_r" />
+
+    <Button
+        android:id="@+id/btn_r_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="红转白"
+        app:layout_constraintEnd_toEndOf="@+id/btn_w_b"
+        app:layout_constraintStart_toStartOf="@+id/btn_w_b"
+        app:layout_constraintTop_toTopOf="@+id/btn_b_w" />
+
+    <Button
+        android:id="@+id/btn_r_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="红转蓝"
+        app:layout_constraintEnd_toEndOf="@+id/btn_b_r"
+        app:layout_constraintStart_toStartOf="@+id/btn_b_r"
+        app:layout_constraintTop_toTopOf="@+id/btn_r_w" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:scaleType="fitStart"
+        android:minHeight="200dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_b_w"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="保存"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
