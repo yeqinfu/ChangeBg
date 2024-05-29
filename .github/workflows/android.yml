@@ -35,7 +35,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.BG_TOKEN }}
       with:
         tag_name: v1.0.0  # Release 的 tag 名称，你可以根据实际情况修改
         release_name: Release v1.0.0  # Release 的名称，你可以根据实际情况修改
