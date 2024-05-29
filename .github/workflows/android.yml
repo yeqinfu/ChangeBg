@@ -24,12 +24,16 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleRelease
-    - name: Upload APK to Release
-      uses: actions/upload-artifact@v2
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.BG_TOKEN }}
       with:
-        name: app-release
-        path: app/build/outputs/apk/release/app-release.apk
-
+        tag_name: v1.0.0  # Release 的 tag 名称
+        release_name: Release v1.0.0  # Release 的名称
+        draft: false  # 是否为草稿，这里设为 false
+        prerelease: false  # 是否为预发布版本，这里设为 false
     - name: Upload APK to Release 
       id: upload-release-asset
       uses: actions/upload-release-asset@v1
