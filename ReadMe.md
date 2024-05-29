@@ -4,5 +4,5 @@
 #### 建立工程配置
 1.  下载[android opencv sdk](https://github.com/opencv/opencv/releases) 选择最新的
     > [镜像站 下载快一些](https://www.sockstack.cn/github) 也感觉不快，那就用  [远程依赖](https://central.sonatype.com/artifact/org.opencv/opencv)
-
+2. [参考代码](https://mp.weixin.qq.com/s?__biz=MzI4Mzc1OTA5OA==&mid=100002242&idx=1&sn=4c629be01fd8ded9b843324d57daf83c&chksm=6b8491575cf3184114f8a3438f71c862e10ee592789779ca4cf38ed9f1d6ebfb01b449c0449d#rd)
 
