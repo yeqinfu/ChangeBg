@@ -213,12 +213,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun change(type: ChangeType) {
 
-        textView2.text = "最小蓝值${type.minB}"
-        textView3.text = "最小绿值${type.minG}"
-        textView4.text = "最小红值${type.minR}"
-        textView5.text = "最大蓝值${type.maxB}"
-        textView6.text = "最大绿值${type.maxG}"
-        textView7.text = "最大红值${type.maxR}"
+        textView2.text = "最小蓝值${String.format("%.2f", type.minB)}"
+        textView3.text = "最小绿值${String.format("%.2f", type.minG)}"
+        textView4.text = "最小红值${String.format("%.2f", type.minR)}"
+        textView5.text = "最大蓝值${String.format("%.2f", type.maxB)}"
+        textView6.text = "最大绿值${String.format("%.2f", type.maxG)}"
+        textView7.text = "最大红值${String.format("%.2f", type.maxR)}"
+
 
         findViewById<SeekBar>(R.id.progressBar).apply {
             progress = ((type.minB / 255) * 100).toInt()
@@ -229,7 +230,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView2.text = "最小蓝值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView2.text = "最小蓝值 $minValueFormatted"
+
 
                 }
 
@@ -250,7 +253,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView3.text = "最小绿值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView3.text = "最小绿值$minValueFormatted"
 
                 }
 
@@ -271,7 +275,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView4.text = "最小红值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView4.text = "最小红值$minValueFormatted"
 
                 }
 
@@ -292,7 +297,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView5.text = "最大蓝值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView5.text = "最大蓝值$minValueFormatted"
 
                 }
 
@@ -313,7 +319,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView6.text = "最大绿值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView6.text = "最大绿值$minValueFormatted"
 
                 }
 
@@ -334,7 +341,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView7.text = "最大红值${progress*2.55}"
+                    val minValueFormatted = String.format("%.2f", progress * 2.55)
+                    textView7.text = "最大红值$minValueFormatted"
 
                 }
 
