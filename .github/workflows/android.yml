@@ -25,14 +25,12 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease
       
-    # 上传 APK 文件到 Release 页面
     - name: Upload APK to Release
-      id: upload-release-asset
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.BG_TOKEN }}
       with:
-        upload_url: https://uploads.github.com/repos/${{ github.repository }}/releases/${{ github.ref }}/assets
-        asset_path: app/build/outputs/apk/release/app-release.apk
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./app/build/outputs/apk/release/app-release.apk
         asset_name: app-release.apk
         asset_content_type: application/vnd.android.package-archive
