@@ -42,12 +42,15 @@ enum class ChangeType(
     var B: Double, var G: Double, var R: Double,
 
     ) {
-    RED_TO_WHITE(0.0, 135.0, 135.0, 180.0, 245.0, 230.0, 255.0, 255.0, 255.0),
-    RED_TO_BLUE(0.0, 135.0, 135.0, 180.0, 245.0, 230.0, 255.0, 0.0, 0.0),
-    BLUE_TO_RED(90.0, 50.0, 50.0, 120.0, 255.0, 255.0, 0.0, 0.0, 255.0),
-    BLUE_TO_WHITE(90.0, 50.0, 50.0, 120.0, 255.0, 255.0, 255.0, 255.0, 255.0),
-    WHITE_TO_RED(0.0, 0.0, 200.0, 180.0, 30.0, 255.0, 0.0, 0.0, 255.0),
-    WHITE_TO_BLUE(0.0, 0.0, 200.0, 180.0, 30.0, 255.0, 255.0, 0.0, 0.0),
+    RED_TO_WHITE(0.0, 135.0, 210.0, 180.0, 255.0, 255.0, 255.0, 255.0, 255.0),
+    RED_TO_BLUE(0.0, 135.0, 204.0, 180.0, 255.0, 255.0, 255.0, 0.0, 0.0),
+
+    BLUE_TO_RED(90.0, 90.0, 50.0, 120.0, 255.0, 255.0, 0.0, 0.0, 255.0),
+    BLUE_TO_WHITE(90.0, 120.0, 50.0, 120.0, 255.0, 255.0, 255.0, 255.0, 255.0),
+
+
+    WHITE_TO_RED(0.0, 0.0, 200.0, 180.0, 4.0, 255.0, 0.0, 0.0, 255.0),
+    WHITE_TO_BLUE(0.0, 0.0, 200.0, 180.0, 4.0, 255.0, 255.0, 0.0, 0.0),
 
 
     ;
@@ -204,7 +207,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView2.text = "最小蓝值$progress"
+                    textView2.text = "最小蓝值${progress*2.55}"
 
                 }
 
@@ -225,7 +228,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView3.text = "最小绿值$progress"
+                    textView3.text = "最小绿值${progress*2.55}"
 
                 }
 
@@ -246,7 +249,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView4.text = "最小红值$progress"
+                    textView4.text = "最小红值${progress*2.55}"
 
                 }
 
@@ -267,7 +270,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView5.text = "最大蓝值$progress"
+                    textView5.text = "最大蓝值${progress*2.55}"
 
                 }
 
@@ -288,7 +291,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView6.text = "最大绿值$progress"
+                    textView6.text = "最大绿值${progress*2.55}"
 
                 }
 
@@ -309,7 +312,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    textView7.text = "最大红值$progress"
+                    textView7.text = "最大红值${progress*2.55}"
 
                 }
 
