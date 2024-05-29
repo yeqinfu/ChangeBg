@@ -26,16 +26,15 @@ android {
             v2SigningEnabled true
         }
 
-        debug {
-            storeFile file('lcp_debug.jks')
-            storePassword "ll12cc34"
-            keyAlias "linciping"
-            keyPassword "ll12cc34"
-        }
+
     }
 
 
     buildTypes {
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
