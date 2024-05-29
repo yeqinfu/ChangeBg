@@ -16,9 +16,28 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file('change.jks')
+            storePassword "change123"
+            keyAlias "change"
+            keyPassword "change123"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        debug {
+            storeFile file('lcp_debug.jks')
+            storePassword "ll12cc34"
+            keyAlias "linciping"
+            keyPassword "ll12cc34"
+        }
+    }
+
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
